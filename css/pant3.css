@@ -1,0 +1,130 @@
+
+:root{
+    color: #24B388;
+    color: #338069;
+    color: #00E6A1;
+    color: #2E4C43;
+    color: #293330;
+    color: #E2E2E2;
+    color: lightseagreen;
+}
+@font-face {
+    font-family: 'inconsolata';
+    src: url(../fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'lato bold';
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+@font-face {
+    font-family: 'lato';
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+@font-face {
+    font-family: 'play';
+    src: url(../fonts/Playfair-display/PlayfairDisplay-VariableFont_wght.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: 'lato-ita'; 
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+    .contenedor3 {
+            /* Nuevo fondo con degradado llamativo */
+            background: linear-gradient(135deg, #00E6A1 0%, #24B388 100%); /* Tonos rojo coral y rosa claro */
+            color: #293330; /* Marrón oscuro para contraste con el fondo claro */
+            padding: 3rem 1.5rem;
+            border-radius: 1rem;
+            /* Sombra más dramática para destacar */
+            box-shadow: 0 20px 40px rgba(255, 255, 255, 0.925); /* Sombra con color del degradado */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* Efecto de inclinación para hacerlo parecer un sticker o sello */
+            transform: rotate(-3deg) scale(1.05); /* Ligeramente más grande y rotado */
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s;
+            cursor: pointer;
+            margin: 4rem auto;
+            max-width: 90%;
+            /* Borde más grueso y vibrante */
+            border: 8px solid #FFC107; /* Amarillo brillante para el borde */
+        }
+
+        .contenedor3:hover {
+            transform: rotate(0deg) scale(1.08); /* Se endereza y agranda al pasar el ratón */
+            box-shadow: 0 30px 60px rgba(255, 254, 254, 0.9);
+        }
+
+        .mega, .oferta {
+            font-family: 'Arial Black', Impact, sans-serif;
+            margin: 0;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        .mega {
+            font-size: clamp(3rem, 10vw, 7rem);
+            color: #FFF; /* Texto en blanco para el título principal */
+            /* Efecto 3D con doble sombra */
+            text-shadow: 
+                -3px -3px 0 #293330, /* Sombra oscura principal */
+                3px 3px 0 #00E6A1; /* Sombra amarilla brillante para el relieve */
+        }
+
+        .oferta {
+            font-size: clamp(2rem, 7vw, 4rem); 
+            color: #293330; /* Color oscuro para contraste */
+            /* Efecto de brillo más sutil */
+            text-shadow: 
+                0 0 5px rgba(255, 255, 255, 0.7);
+            padding-bottom: 0.5rem;
+            margin-top: -0.5rem; /* Ajuste para acercar los títulos */
+        }
+        
+        /* --- ESTILOS DE LOS LIBROS DENTRO DEL CONTENEDOR 3 --- */
+        .libros-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px; /* Más espacio entre libros */
+            margin-top: 2rem;
+            max-width: 100%;
+        }
+
+        .libro {
+            width: 85px; /* Ligeramente más grandes */
+            height: auto;
+            border-radius: 6px; /* Bordes más redondeados */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra más fuerte */
+            border: 3px solid #FFF; 
+            transition: transform 0.3s;
+        }
+
+        .libro:hover {
+            transform: translateY(-8px) scale(1.1); /* Efecto pop-up más pronunciado */
+        }
+        @media (min-width: 640px) {
+            .type {
+                flex-direction: row;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+            .cuadro2, .cuadro3, .cuadro4, .cuadro5 {
+                width: 45%;
+            }
+            .contenedor3 {
+                max-width: 600px; /* Aumentamos el ancho para que quepan los libros */
+                padding: 4rem 2rem;
+            }
+            .libro {
+                width: 100px; /* Un poco más grandes en desktop */
+            }
+        }
+        .io{
+            font-size: 20px;
+        }

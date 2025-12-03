@@ -1,0 +1,106 @@
+:root{
+    color: #24B388;
+    color: #338069;
+    color: #00E6A1;
+    color: #2E4C43;
+    color: #293330;
+    color: #E2E2E2;
+    color: lightseagreen;
+}
+@font-face {
+    font-family: 'inconsolata';
+    src: url(../fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'lato bold';
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+@font-face {
+    font-family: 'lato';
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+@font-face {
+    font-family: 'play';
+    src: url(../fonts/Playfair-display/PlayfairDisplay-VariableFont_wght.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: 'lato-ita';
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+
+
+/* 💡 Importante: z-index solo funciona si los elementos están posicionados. */
+.cuadro2,.cuadro3 ,.cuadro4, .cuadro5 {
+    position: absolute; /* O 'relative', 'fixed', 'sticky' */
+    /* Los inicializamos en un orden visible. 3 sobre 4 por defecto. */
+    z-index: 1; /* Valor base */
+    background-color: #293330;
+    font-size: 25px;
+    padding: 15px;
+    max-width:400px;
+    height: 380px;
+    margin: 10px 0;
+    color: #E2E2E2;
+    border: black solid 1px;
+}
+
+.cuadro2 {
+    font-family: 'inconsolata';
+    left: 880px;
+    top: 1320px;
+    z-index: 2; /* Por defecto, 3 está más arriba que 4 (que tiene z-index: 1) */
+}
+.cuadro3 {
+    font-family: 'inconsolata';
+    left:1400px;
+    top: 1320px;
+    z-index: 2;
+}
+
+.cuadro4 {
+    font-family: 'inconsolata';
+    left: 880px;
+    top: 1320px;
+    z-index: 1; /* Por defecto, 4 está más abajo que 3 */
+}
+.cuadro5{
+    font-family: 'inconsolata';
+    left:1400px;
+    top: 1320px;
+    z-index: 1;
+}
+/* 🚀 Clase que activaremos con JavaScript para que el cuadro4 suba */
+.cuadro4.activo-arriba, .cuadro5.activo-arriba {
+    z-index: 3; /* Le damos un z-index más alto que el 2 del cuadro3 */
+}
+.text2{
+    font-family: 'lato-ita';
+}
+.contenido-selector {
+    display: none; /* Oculta todo el contenido por defecto */
+}
+
+.contenido-selector.visible {
+    display: block; /* Muestra solo el contenido que tiene esta clase */
+}
+.imgkid2{
+    position: absolute;
+    height: 200px;
+    width: 1000px;
+    top: 1050px;
+    left: 870px;
+}
+.subcurso2{
+    background-color: #E2E2E2;
+    height: 80px;
+    width: 475px;
+    position: absolute;
+    top: 1220px;
+    left: 900px;
+    border: #00E6A1 solid 1px;
+    border-radius: 10px;
+    color: #293330;
+    font-size: 50px;
+}

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATRICÚLA</title>
+</head>
+<style>
+    :root{
+    color: #24B388;
+    color: #338069;
+    color: #00E6A1;
+    color: #2E4C43;
+    color: #293330;
+    color: #E2E2E2;
+}
+@font-face {
+    font-family: 'inconsolata';
+    src: url(../fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'lato bold';
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+@font-face {
+    font-family: 'lato';
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+@font-face {
+    font-family: 'play';
+    src: url(../fonts/Playfair-display/PlayfairDisplay-VariableFont_wght.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: 'lato ita';
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+    /* 1. Estilos generales del cuerpo */
+    body {
+        font-family: 'inconsolata';
+        background-color: #293330;
+        /* Fondo gris suave */
+        color: #ffffff;
+        max-width: 800px;
+        margin: 40px auto;
+        /* Centrar en pantalla */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+        /* Sombra estilo tarjeta */
+        background-color: #0a251c;
+        /* Fondo blanco para el contenido */
+        cursor: url(https://images.emojiterra.com/google/noto-emoji/unicode-16.0/color/svg/1f384.svg) 12 12, auto;
+    }
+
+    h1,
+    h2 {
+        text-align: center;
+        color: #ffffff;
+    }
+
+    /* 2. Estilos del Formulario (Inputs y Labels) */
+    label {
+        display: block;
+        /* Cada label en su propia línea */
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    input[type="email"],
+    input[type="text"],
+    input[type="number"] {
+        width: 100%;
+        /* Ocupar todo el ancho disponible */
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        /* Bordes redondeados */
+        box-sizing: border-box;
+        /* Para que el padding no rompa el ancho */
+        font-size: 16px;
+    }
+
+    input:focus {
+        border-color: #00E6A1;
+        /* Color azul al escribir */
+        outline: none;
+    }
+
+    /* 3. Estilos de los Botones */
+    button {
+        background-color: #00E6A1;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 0.3s;
+        margin-right: 10px;
+    }
+
+    button:hover {
+        background-color: #24B388;
+        /* Color más oscuro al pasar el mouse */
+    }
+
+    button:last-of-type {
+        background-color: #27ae60;
+        /* Botón mostrar en verde */
+    }
+
+    button:last-of-type:hover {
+        background-color: #219150;
+    }
+
+    /* 4. Estilos de la Tabla (Generada por JS) */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        background-color: #2c3e50;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+
+    tr:hover {
+        background-color: #000000;
+        /* Efecto al pasar el mouse por la fila */
+    }
+
+    /* Mensajes de estado */
+    #salida {
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 2;
+    }
+</style>
+
+<body>
+    <h1>Data</h1>
+    <h2>Regístrate</h2>
+
+    <label>Nombres<input id="nombre" type="text"></label>
+    <label>Apellidos<input id="apellido" type="text"></label>
+    <label>Correo electrónico <input id="correo" type="email"></label>
+    <label>DNI <input id="dni" type="number"></label> <br>
+    <label>Padre/Madre/Apoderado <input id="apo" type="text"></label> <br>
+
+    <button onclick="guardar()">Guardar</button>
+    <button onclick="mostrardatos()">Mostrar</button>
+
+    <h2>Resultados</h2>
+    <div id="salida"></div>
+
+    <script>
+        function guardar() {
+            let lista = JSON.parse(localStorage.getItem('misnotas')) || [];
+            if (!Array.isArray(lista)) {
+                lista = [];
+            }
+            {
+                const datos = {
+                    nombre: document.getElementById('nombre').value,
+                    correo: document.getElementById('correo').value,
+                    apellido: document.getElementById('apellido').value,
+                    dni: document.getElementById('dni').value,
+                    apo: document.getElementById('apo').value,
+                };
+                lista.push(datos);
+                localStorage.setItem('misnotas', JSON.stringify(lista));
+                alert('Los datos han sido guardados')
+                limpiardatos();
+
+            }
+
+            function limpiardatos() {
+                document.getElementById('nombre').value = ""
+                document.getElementById('apellido').value = ""
+                document.getElementById('dni').value = ""
+                document.getElementById('apo').value = ""
+                document.getElementById('correo').value = ""
+
+            }
+        }
+            
+        function mostrardatos() {
+                const lista = JSON.parse(localStorage.getItem('misnotas')) || [];
+                if (!Array.isArray(lista) || lista.length === 0) {
+                    document.getElementById('salida').innerHTML = "no hay datos";
+                    return;
+                }
+
+                let tabla = "<table><tr><th>Estudiante</th><th>Apellido</th><th>DNI</th><th>Apoderado</th><th> Correo electrónico</tr>"
+
+                lista.forEach(datos => {
+                    tabla += `<tr>
+                      <td>${datos.nombre}</td>
+                      <td>${datos.apellido}</td>
+                      <td>${datos.dni}</td>
+                      <td>${datos.apo}</td>
+                      <td style="color: white<;font-weigth:bold;">${datos.correo}</td>
+                    </tr>`;
+                });
+                tabla += "</tabla>";
+                document.getElementById('salida').innerHTML = tabla
+
+
+
+            }
+    </script>
+</body>
+
+</html>

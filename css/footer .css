@@ -1,0 +1,134 @@
+
+:root{
+    color: #24B388;
+    color: #338069;
+    color: #00E6A1;
+    color: #2E4C43;
+    color: #293330;
+    color: #E2E2E2;
+    color: lightseagreen;
+}
+@font-face {
+    font-family: 'inconsolata';
+    src: url(../fonts/Inconsolata/Inconsolata-VariableFont_wdth\,wght.ttf);
+    font-style: normal;
+}
+@font-face {
+    font-family: 'lato bold';
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf);
+}
+@font-face {
+    font-family: 'lato';
+    src: url(../fonts/Lato/Lato-Black.ttf);
+}
+@font-face {
+    font-family: 'play';
+    src: url(../fonts/Playfair-display/PlayfairDisplay-VariableFont_wght.ttf);
+    font-style: italic;
+}
+@font-face {
+    font-family: 'lato-ita';
+    src: url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+.footer {
+            background-color: #293330; /* Azul principal de FUTDEER */
+            color: #E2E2E2;
+            padding: 3rem 5%;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #10B981; /* Amarillo de acento */
+        }
+
+        .footer-links div, .footer-contact div {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4, .footer-contact h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #10B981; /* Verde de acento */
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-links ul li a:hover {
+            color: #00E6A1;
+        }
+
+        .social-icons a {
+            display: justify-content;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icons a:hover {
+            color: #00E6A1;
+            background-color: #293330;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .icon{
+            height: 50px;
+        }
+        .icon:hover{
+            transform: translateY(-5px);
+        }
+        /* Responsive adjustments para contenedores */
+        @media (min-width: 640px) {
+            .type {
+                flex-direction: row;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+            .cuadro2, .cuadro3, .cuadro4, .cuadro5 {
+                width: 45%;
+            }
+            .contenedor3 {
+                max-width: 700px; /* Aumentamos el ancho para que quepan los libros */
+                padding: 4rem 2rem;
+            }
+            .libro {
+                width: 100px; /* Un poco más grandes en desktop */
+            }
+        }
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .footer-section {
+                flex: 1;
+                min-width: 200px;
+            }
+        }
